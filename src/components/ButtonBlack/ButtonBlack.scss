@@ -1,0 +1,32 @@
+.BtnBlack {
+    background-color: rgba(47, 53, 66,1.0);
+    border: 2px solid rgba(47, 53, 66,1.0);
+    color: rgba(241, 242, 246,1.0);
+    cursor: pointer;
+    width: 230px;
+    padding: 10px 0px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    word-spacing: 4px;
+    font-weight: 300;
+    transition: 0.2s;
+    outline: none;
+
+    &:hover {
+        background-color: rgba(241, 242, 246,1.0);
+        color: rgba(47, 53, 66,1.0);
+    }
+}
+
+.BtnBlackDisabled {
+    background-color: rgba(47, 53, 66,1.0);
+    border: 2px solid rgba(47, 53, 66,1.0);
+    color: rgba(241, 242, 246,1.0);
+    width: 230px;
+    padding: 10px 0px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    word-spacing: 4px;
+    font-weight: 300;
+    outline: none;
+}

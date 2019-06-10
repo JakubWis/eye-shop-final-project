@@ -1,0 +1,142 @@
+.Product {
+    display: flex;
+
+    .Photo {
+        background-color: rgba(241, 242, 246,0.8);
+        width: 50%;
+    }
+
+    .About {
+        padding-left: 50px;
+
+        .Name {
+            font-weight: 400;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+        }
+    
+        .Price {
+            padding-top: 5px;
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: rgba(164, 176, 190,1.0);
+        }
+    
+        .Description {
+            word-spacing: 1px;
+            padding-bottom: 5px;
+        }
+
+        .PickSize {
+            .Text {
+                display: block;
+                letter-spacing: 1px;
+                padding-bottom: 7px;
+            }
+
+            .Btn {
+                cursor: pointer;
+                height: 30px;
+                width: 30px;
+                margin-bottom: 35px;
+                margin-right: 7px;
+                background: none;
+                border: 1px solid rgba(47, 53, 66,1.0);
+                color: rgba(47, 53, 66,1.0);
+                outline: none;
+                
+            }
+
+            .BtnClicked {
+                cursor: pointer;
+                height: 33px;
+                width: 33px;
+                margin-bottom: 35px;
+                margin-right: 7px;
+                background: none;
+                border: 1px solid rgba(47, 53, 66,1.0);
+                background-color: rgba(47, 53, 66,1.0);
+                color: rgba(255, 255, 255,1.0);
+                font-weight: 400;
+                outline: none;
+            }
+
+            .BtnDisabled {
+                height: 30px;
+                width: 30px;
+                margin-bottom: 35px;
+                margin-right: 7px;
+                background: none;
+                border: 1px solid rgba(206, 214, 224,1.0);
+                color: rgba(206, 214, 224,1.0);
+                outline: none;
+            }
+        }
+
+        .Amount {
+            margin-bottom: 20px;
+            display: flex;
+            .NumberInput{
+                text-align: center;
+                font-size: 15px;
+                word-spacing: 0.5px;
+                letter-spacing: 1px;
+                padding: 9px;
+                outline: none;
+                width: 25px;
+                border: none;
+                background-color: rgba(241, 242, 246,1.0);
+                color: rgba(87, 96, 111,1.0);
+            }
+
+            .Btn {
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-size: 18px;
+                color: rgba(87, 96, 111,1.0);
+                padding: 0 12px;
+                outline: none;
+            }
+
+            .Text {
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+                color: rgba(87, 96, 111,1.0);
+            }
+
+            //DONT SHOW ARROWS IN INPUT
+            input[type=number]::-webkit-inner-spin-button, 
+            input[type=number]::-webkit-outer-spin-button {  
+                -webkit-appearance: none; 
+                margin: 0; 
+            }
+        }
+    }
+
+    .Waring {
+        color: rgba(255, 71, 87,1.0);
+        display: block;
+        padding: 15px 0;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-height: 850px) {
+    .Product {
+    
+        .Photo {
+            height: 65vh;
+        }
+    }
+}
+
+@media (max-height: 650px) {
+    .Product {
+    
+        .Photo {
+            height: 85vh;
+        }
+    }
+}

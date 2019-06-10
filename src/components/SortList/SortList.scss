@@ -1,0 +1,26 @@
+.SortList{
+    display: flex;
+    flex-flow: column;
+    padding-right: 100px; 
+    border-bottom: 1px solid rgba(223, 228, 234,1.0);
+    height: 225px;
+
+    h2{
+        padding-bottom: 15px;
+        font-weight: 400;
+        color: rgba(47, 53, 66,1.0);
+    }
+
+    button {
+        background: none;
+        border: none;
+        font-size: 16px;
+        font-weight: 500;
+        color: rgba(116, 125, 140,1.0);
+        text-align: left;
+        cursor: pointer;
+        padding: 10px 0;
+        outline: none;
+        width: 120px;
+    }
+}

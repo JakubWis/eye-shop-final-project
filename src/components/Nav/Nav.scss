@@ -1,0 +1,77 @@
+.Nav {
+    height: 150px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    padding-bottom: 50px;
+
+    .Logo {
+        font-family: 'Raleway', sans-serif;
+        position: absolute;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        font-size: 55px;
+        font-weight: 200;
+        color: rgba(47, 53, 66,1.0);
+
+        img {
+            height: 100px;
+        }
+    }
+
+    .Menu {
+        display: flex;
+        align-items: center;
+        
+        a{
+            margin-left: 35px;
+            text-transform: uppercase;
+            color: rgba(164, 176, 190,1.0);
+            font-weight: 500;
+            letter-spacing: 4px;
+            padding: 1px;
+            transition: 0.2s;
+
+            &:hover{ 
+                color: rgba(47, 53, 66,1.0); 
+            }
+        }
+
+        .Cart{
+            display: flex;
+
+            .NumberCart {
+                font-size: 18px;
+                position: relative;
+                top: 3px;
+            }
+        }
+
+        .active {
+            color: rgba(47, 53, 66,1.0);
+            font-weight: 600;
+        }
+
+        .fas {
+            color: rgba(0,0,0, 0.75);
+            font-size: 24px;
+            padding: 2px 0;
+            display: flex;
+            justify-content: flex-end;
+
+            &:hover{
+                color: rgba(47, 53, 66,1.0);
+            }
+        }
+
+        .active-cart{
+            .fas{
+                color: rgba(0,0,0, 1);
+            }
+            
+        }
+    }
+}
+

@@ -1,0 +1,68 @@
+.ShoppingItem {
+    width: 45%;
+    height: 52vh;
+    display: flex;
+    flex-direction: column;
+    margin: 1% 1%;
+    background-color: rgba(241, 242, 246,0.8);
+    position: relative;
+    color: rgba(47, 53, 66,1.0);
+    border: 1px solid rgba(255, 255, 255,1.0);
+    transition: 0.2s;
+
+    &:hover {
+        border: 1px solid rgba(206, 214, 224,1.0);
+    }
+
+    .Extra {
+        position: absolute;
+        left: 30px;
+        top: 20px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .Photo{
+        padding-top: 15%;
+        display: block;
+        width: 70%;
+        height: 65%;
+        margin: 0 auto;
+    }
+
+    .Name {
+        padding: 10% 0 0 30px;
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: 1px;
+        word-spacing: 4px;
+
+    }
+
+    .Price {
+        padding: 2% 0 0px 30px;
+        font-size: 18px;
+        letter-spacing: 2px;
+        font-weight: 400;
+        color: rgba(164, 176, 190,1.0);
+
+    }
+}
+
+@media (max-width: 1400px) and (orientation: landscape), (max-height: 900) {
+    .ShoppingItem {
+        width: 48%;
+        height: 70vh;
+    }
+}
+
+@media (max-width: 1400px) and (orientation: portrait), (max-height: 900) {
+    .ShoppingItem {
+        width: 48%;
+        height: 35vh;
+
+        .Photo{
+            padding-top: 30%;
+        }
+    }
+}
