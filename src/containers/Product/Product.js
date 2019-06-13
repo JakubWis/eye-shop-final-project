@@ -36,8 +36,8 @@ class Product extends Component {
 
   AddProductToCart = (amount) => {
     for(let i=0; i<amount; i++) {
-      this.props.addToCart( this.state.item, this.props.cart )
-      this.props.removeFromStore(this.props.shoppingItems, this.props.match.params.id, this.state.item.pickedSize)
+      this.props.addToCart( {...this.state.item} )
+      this.props.removeFromStore(this.props.match.params.id, this.state.item.pickedSize)
 
     }
     this.props.pickSize(this.props.match.params.id, null, this.props.shoppingItems)
@@ -99,7 +99,7 @@ class Product extends Component {
   pickSize = (size) => {
     this.setState({amount: 1})
 
-    this.props.pickSize(this.props.match.params.id, size, this.props.shoppingItems)
+    this.props.pickSize(this.props.match.params.id, size)
     
     //dealing with highlight
     let btns = this.state.sizeBtns

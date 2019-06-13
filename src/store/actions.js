@@ -51,44 +51,39 @@ export const sortPriceDescending = (shoppingItems) => {
     }
 }
 
-export const addToCart = (itemToAdd, cart) => {
+export const addToCart = (itemToAdd) => {
     return {
         type: ADD_TO_CART,
-        itemToAdd,
-        cart
+        itemToAdd
     }
 }
 
-export const delteFromCart = (itemIndex, cart) => {
+export const deleteFromCart = (itemIndex) => {
     return {
         type: DELETE_FROM_CART,
-        itemIndex,
-        cart
+        itemIndex
     }
 }
 
-export const pickSize = (itemId, size, shoppingItems) => {
+export const pickSize = (itemId, size) => {
     return {
         type: PICK_SIZE,
         itemId,
-        size,
-        shoppingItems
+        size
     }
 }
 
-export const removeFromStore = ( shoppingItems, productId, pickedSize) => {
+export const removeFromStore = ( productId, pickedSize) => {
     return {
         type: REMOVE_FORM_STORE,
-        shoppingItems,
         productId,
-        pickedSize,
+        pickedSize
     }
 }
 
-export const addToStore = ( shoppingItems, productId, pickedSize ) => {
+export const addToStore = (  productId, pickedSize ) => {
     return {
         type: ADD_TO_STORE,
-        shoppingItems, 
         productId, 
         pickedSize
     }

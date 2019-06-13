@@ -11,8 +11,7 @@ const Footer = props => {
         <Link to="/faq">Faq</Link>
         <Link to="/regulamin">Regulamin</Link>
         <Link to="/kontakt">Kontakt</Link>
-        <Link><span className="fab fa-facebook-f"></span></Link>
-        <Link><span className="fab fa-instagram"></span></Link>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/"><span className="fab fa-facebook-f"></span></a>
       </nav>
   );
 }

@@ -299,17 +299,15 @@ const reducer = (state = initalState, action) => {
         return { ...state, shoppingItems: sortedByPriceDes }
       
       case actionTypes.ADD_TO_CART:
-        const coppyOfCart = action.cart
-        coppyOfCart.push({...action.itemToAdd})
-        return { ...state, cart: coppyOfCart }
+        return { ...state, cart: [...state.cart, action.itemToAdd] }
 
       case actionTypes.DELETE_FROM_CART:
-        const arrWithoutRemovedItem = action.cart.filter((item, index) => index !== action.itemIndex )
+        const arrWithoutRemovedItem = state.cart.filter((item, index) => index !== action.itemIndex )
         console.log(arrWithoutRemovedItem)
         return { ...state, cart: arrWithoutRemovedItem}
 
       case actionTypes.PICK_SIZE:
-        const arrWithPickedSize = action.shoppingItems.map(item => {
+        const arrWithPickedSize = state.shoppingItems.map(item => {
           if(item.id === Number(action.itemId))
             item.pickedSize = action.size
           return item
@@ -317,12 +315,12 @@ const reducer = (state = initalState, action) => {
         return { ...state, shoppingItems: arrWithPickedSize}
 
       case actionTypes.REMOVE_FORM_STORE:
-        const arrWithoutJustBoughtItems = action.shoppingItems
+        const arrWithoutJustBoughtItems = state.shoppingItems
         arrWithoutJustBoughtItems.find(storedItem => storedItem.id === Number(action.productId)).size[action.pickedSize] -= 1  
         return { ...state, shoppingItems: arrWithoutJustBoughtItems}
 
       case actionTypes.ADD_TO_STORE:
-        const arrWithItemBackToStore = action.shoppingItems
+        const arrWithItemBackToStore = state.shoppingItems
         arrWithItemBackToStore.find(storedItem => storedItem.id === Number(action.productId)).size[action.pickedSize] += 1  
         return { ...state, shoppingItems: arrWithItemBackToStore}
 

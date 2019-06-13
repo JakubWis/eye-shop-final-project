@@ -1,12 +1,12 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './store/reducer';
-import { AnimatedRoute, AnimatedSwitch } from 'react-router-transition';
+import { AnimatedSwitch } from 'react-router-transition';
 
 
 //for routes

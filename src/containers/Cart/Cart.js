@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { delteFromCart, buyProducts, clearCart, addToStore } from '../../store/actions'
+import { deleteFromCart, buyProducts, clearCart, addToStore } from '../../store/actions'
 import Modal from '../../components/UI/Modal/Modal';
 import CartList from '../../components/CartList/CartList'
-import './Cart.scss'
-import { tsImportEqualsDeclaration } from '@babel/types';
+import './Cart.scss';
 
 class Cart extends Component {
   constructor(props){
@@ -45,10 +44,8 @@ class Cart extends Component {
   }
 
   deleteCartItem = (index, itemId, itemSize) => {
-    console.log(index)
-    console.log(this.props.cart)
-    this.props.deleteItemFromCart(index, this.props.cart)
-    this.props.addToStore(this.props.shoppingItems, itemId, itemSize)
+    this.props.deleteItemFromCart(index)
+    this.props.addToStore(itemId, itemSize)
     this.countTotal()
   }
 
@@ -104,7 +101,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToPros = {
-  deleteItemFromCart: delteFromCart,
+  deleteItemFromCart: deleteFromCart,
   buyProducts: buyProducts,
   clearCart: clearCart,
   addToStore: addToStore,

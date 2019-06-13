@@ -82,11 +82,14 @@ class ShoppingList extends Component {
     render() {
         //reverse items array to show them form lattely added
         let shoppingItemsReversed = this.props.shoppingItems
-        if(!this.props.isSorted){
-            if(this.props.shoppingItems[this.props.shoppingItems.length - 1 ].id !== 0) {
-                this.props.shoppingItems.reverse()
+        if( this.props.shoppingItems.length !== 0 ){ // checking if array of shoppingItems is not empty (because of search engine)
+            if(!this.props.isSorted){
+                if(this.props.shoppingItems[this.props.shoppingItems.length - 1 ].id !== 0) {
+                    this.props.shoppingItems.reverse()
+                }
             }
-        }
+        } 
+        
         const shoppingItems = shoppingItemsReversed.map(item => (
             <ShoppingItem 
                 key={item.id}
@@ -98,13 +101,26 @@ class ShoppingList extends Component {
         ))
         return(
         <div className="ShoppingList">
+            <div className="SearchBlock">
+                <input
+                    type="text" 
+                    placeholder="Szukaj..."
+                    className="SearchInput"
+                    value={this.props.searchedValue}
+                    onChange={(e) => { 
+                        this.props.searcheFor(e.target.value)
+                        this.setState({currentPage: 0})
+                    }}
+                />
+                <span class="fas fa-search"></span>
+            </div>
             {this.shoppingItemsOnDisplay(this.state.currentPage, shoppingItems)}
             <div className="Controls">
                 {this.numberButtons(shoppingItems)}
                 <button 
                     className="ControlBtn"
                     onClick={() => this.nextPageHandler(this.state.currentPage, shoppingItems)}>
-                    <span class="fas fa-arrow-right"></span>
+                    <span className="fas fa-arrow-right"></span>
                 </button>
             </div>
             

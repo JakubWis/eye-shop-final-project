@@ -16,8 +16,9 @@ class Home extends Component {
         {id: 0, type: 'Nazwa A-Z', clicked: false},
         {id: 1, type: 'Nazwa Z-A', clicked: false},
         {id: 2, type: 'Ceny rosnąco', clicked: false},
-        {id: 3, type: 'Ceny malejąco', clicked: false}
+        {id: 3, type: 'Ceny malejąco', clicked: false},
       ],
+      searchedValue: '',
     }
   }
 
@@ -66,22 +67,46 @@ class Home extends Component {
 
   convertToCash = (number) => {
     return `${number.toFixed(2)} zł`;
-  } 
+  }
+  
+  getSearchedValue = (text) => {
+    this.setState({searchedValue: text})
+  }
+
+  shoppingItemsAfterSearch = (shoppingItems, serchFraze) => {
+    if(serchFraze === '')
+      return shoppingItems
+    else {
+      let shoppingItemsAfterSearch = []
+      shoppingItems.map(item => {
+        for(let i=0; i< item.name.length - serchFraze.length + 1; i++){
+          if(serchFraze === item.name.substr(i, serchFraze.length))
+            return shoppingItemsAfterSearch.push(item)
+        }
+      })
+      return shoppingItemsAfterSearch
+    }  
+  }
 
   render() {
     return(
       <div className="Home">
         <SortList 
-        sortListItems={this.state.sortListItems}
-        onClickChangeColor={this.onClickSortHandler}/>
+          sortListItems={this.state.sortListItems}
+          onClickChangeColor={this.onClickSortHandler}
+        />
         <ShoppingList 
-        shoppingItems={this.props.shoppingItems}
-        convertToCash={this.convertToCash}
-        isSorted={this.CheckIfItemsAreSorted()}/>
+          shoppingItems={this.shoppingItemsAfterSearch(this.props.shoppingItems, this.state.searchedValue)}
+          convertToCash={this.convertToCash}
+          isSorted={this.CheckIfItemsAreSorted()}
+          searcheFor={this.getSearchedValue}
+          searchedValue={this.state.searchedValue}
+        />
       </div>
     );
   }
 }
+
 
 const mapStateToProps = state => {
   return {
