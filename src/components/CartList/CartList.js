@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CartItem from './CartItem/CartItem';
-import ButtonBlack from '../ButtonBlack/ButtonBlack';
+import ButtonBlack from '../UI/ButtonBlack/ButtonBlack';
 
 import './CartList.scss';
 
@@ -9,7 +9,7 @@ const CartList = (props) => {
 
     const cartItems = props.cartItems.map((item, index) => (
         <CartItem 
-            key={item.id}
+            key={index + 'id:' + item.id}
             item={item}
             convertToCash={props.convertToCash}
             deleteCartItem={props.deleteCartItem}
@@ -25,10 +25,16 @@ const CartList = (props) => {
                 <input 
                 type="text"
                 placeholder="kod rabatowy"
-                className="Discount"/>
-            <span className="Total">RAZEM: {props.total}</span>
+                className="Discount"
+                onChange={(e) => props.checkDiscountCorrectness(e.target.value)}/>
+            <span className="Total">
+                <span className="BeforeDiscount">{props.totalBeforeDiscount}</span>
+                RAZEM: {props.total} 
+            </span>
             <ButtonBlack 
-                text="Zapłać"/>
+                text="Zapłać"
+                clickedHandler={props.buyProductsHandler}
+                shouldBeDisabled={(props.cartItems.length === 0)? true: false}/>
             </div>
             
         </div>

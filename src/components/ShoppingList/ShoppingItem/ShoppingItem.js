@@ -9,7 +9,7 @@ const ShoppingItem = (props) => {
         shoppingItem = (
         <Link 
             exact to={ `/product/${props.item.id}`}
-            className="ShoppingItem"
+            className={"ShoppingItem" + props.goLeft + props.comeFromRight}
             key={props.item.id}
         >
             <h2 className="Extra">{props.item.extra}</h2>
@@ -23,7 +23,7 @@ const ShoppingItem = (props) => {
         shoppingItem = (
         <Link 
             exact to={ `/product/${props.item.id}`}
-            className="ShoppingItem"
+            className={"ShoppingItem" + props.goLeft + props.comeFromRight}
             key={props.item.id}
         >
             <img className="Photo" src={props.item.photoLink} alt="product"/>

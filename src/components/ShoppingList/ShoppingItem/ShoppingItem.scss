@@ -8,10 +8,14 @@
     position: relative;
     color: rgba(47, 53, 66,1.0);
     border: 1px solid rgba(255, 255, 255,1.0);
-    transition: 0.2s;
+    transition: 0.4s;
 
     &:hover {
         border: 1px solid rgba(206, 214, 224,1.0);
+        box-shadow: 0 6px 9px rgba(164, 176, 190,0.2), 0 6px 9px rgba(164, 176, 190,0.3);
+        .Photo{
+            transform: scale(1.1);
+        }
     }
 
     .Extra {
@@ -28,6 +32,7 @@
         width: 70%;
         height: 65%;
         margin: 0 auto;
+        transition: 0.2s;
     }
 
     .Name {

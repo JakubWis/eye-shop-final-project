@@ -22,7 +22,7 @@ const CartItem = (props) => {
                 <span className="Price">{props.convertToCash(props.item.price)}</span>
             </Link>
             <div className="SafeZone">
-                <button className="Delete" onClick={() => props.deleteCartItem(props.index)}>Usuń produkt</button>
+                <button className="Delete" onClick={() => props.deleteCartItem(props.index, props.item.id,props.item.pickedSize)}>Usuń produkt</button>
             </div>
         </div>
     );

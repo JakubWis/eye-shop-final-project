@@ -2,4 +2,66 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
+    animation: fadeIn 0.7s;
+
+    .Controls{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 30px;
+        .ControlBtn {
+            background: none;
+            outline: none;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            font-weight: 200;
+            padding: 3px 6px;
+            margin: 0 2px;
+
+            .fa-arrow-right {
+                font-size: 14px;
+            }
+        }
+
+        .active{
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+}
+
+.goLeft{
+    animation: moveToLeft 0.8s;
+}
+
+.comeFromRight {
+    animation: fromRight 0.8s;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes moveToLeft {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-200vh);
+    }
+}
+
+@keyframes fromRight {
+    0%{
+        transform: translateX(100vh);
+    }
+    100%{
+        transform: translateX(0);
+    }
 }

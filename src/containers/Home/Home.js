@@ -8,8 +8,8 @@ import { sortAz, sortZa, unsort, sortPriceAscending, sortPriceDescending } from 
 import './Home.scss';
 
 class Home extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
 
     this.state = {
       sortListItems: [
@@ -19,6 +19,11 @@ class Home extends Component {
         {id: 3, type: 'Ceny malejąco', clicked: false}
       ],
     }
+  }
+
+  componentWillMount() {
+    if(this.CheckIfItemsAreSorted() === false)
+      this.props.unsort(this.props.shoppingItems)
   }
 
   onClickSortHandler = (key) => {
@@ -53,6 +58,12 @@ class Home extends Component {
     this.setState({ sortListItems: listItems })
   }
 
+  CheckIfItemsAreSorted = () => {
+    let isSorted=false
+    this.state.sortListItems.map(item => (item.clicked === true)? isSorted=true: null)
+    return isSorted
+  }
+
   convertToCash = (number) => {
     return `${number.toFixed(2)} zł`;
   } 
@@ -65,7 +76,8 @@ class Home extends Component {
         onClickChangeColor={this.onClickSortHandler}/>
         <ShoppingList 
         shoppingItems={this.props.shoppingItems}
-        convertToCash={this.convertToCash}/>
+        convertToCash={this.convertToCash}
+        isSorted={this.CheckIfItemsAreSorted()}/>
       </div>
     );
   }

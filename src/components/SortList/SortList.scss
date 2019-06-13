@@ -22,5 +22,10 @@
         padding: 10px 0;
         outline: none;
         width: 120px;
+        transition: all 0.2s;
+
+        &:hover{
+            color: rgba(47, 53, 66,1.0);
+        }
     }
 }

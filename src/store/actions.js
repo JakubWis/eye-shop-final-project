@@ -8,6 +8,10 @@ export const SORT_PRICE_DESCENDING = 'SORT_PRICE_DESCENDING'
 export const ADD_TO_CART = 'ADD_TO_CART'
 export const UPDATE_CART = 'UPDATE_CART'
 export const DELETE_FROM_CART = 'DELETE_FROM_CART'
+export const BUY_PRODUCTS = 'BUY_PRODUCTS'
+export const CLEAR_CART = 'CLEAR_CART'
+export const REMOVE_FORM_STORE = 'REMOVE_FORM_STORE'
+export const ADD_TO_STORE = 'ADD_TO_STORE'
 
 export const PICK_SIZE = 'PICK_SIZE'
 
@@ -69,6 +73,39 @@ export const pickSize = (itemId, size, shoppingItems) => {
         itemId,
         size,
         shoppingItems
+    }
+}
+
+export const removeFromStore = ( shoppingItems, productId, pickedSize) => {
+    return {
+        type: REMOVE_FORM_STORE,
+        shoppingItems,
+        productId,
+        pickedSize,
+    }
+}
+
+export const addToStore = ( shoppingItems, productId, pickedSize ) => {
+    return {
+        type: ADD_TO_STORE,
+        shoppingItems, 
+        productId, 
+        pickedSize
+    }
+}
+//CHANGE WHEN DATABASE!!!!!!
+export const buyProducts = ( cart, shoppingItems ) => {
+    return {
+        type: BUY_PRODUCTS,
+        cart, 
+        shoppingItems,
+    }
+}
+
+export const clearCart = ( cart ) => {
+    return {
+        type: CLEAR_CART,
+        cart,
     }
 }
 

@@ -1,5 +1,6 @@
 .Product {
     display: flex;
+    transition: transform 0.5s, opacity 0.5s;
 
     .Photo {
         background-color: rgba(241, 242, 246,0.8);
@@ -38,7 +39,6 @@
                 cursor: pointer;
                 height: 30px;
                 width: 30px;
-                margin-bottom: 35px;
                 margin-right: 7px;
                 background: none;
                 border: 1px solid rgba(47, 53, 66,1.0);
@@ -51,7 +51,6 @@
                 cursor: pointer;
                 height: 33px;
                 width: 33px;
-                margin-bottom: 35px;
                 margin-right: 7px;
                 background: none;
                 border: 1px solid rgba(47, 53, 66,1.0);
@@ -64,12 +63,34 @@
             .BtnDisabled {
                 height: 30px;
                 width: 30px;
-                margin-bottom: 35px;
                 margin-right: 7px;
                 background: none;
                 border: 1px solid rgba(206, 214, 224,1.0);
                 color: rgba(206, 214, 224,1.0);
                 outline: none;
+            }
+
+            .HowMany {
+                display: block;
+                width: 140px;
+                margin-top: 7px;
+                margin-bottom: 35px;
+                font-size: 13px;
+                word-spacing: 1px;
+                color: rgba(47, 53, 66,1.0);
+
+                .Many {
+                    color: rgba(123, 237, 159,1.0);
+                }
+
+                .Medium {
+                    color: rgba(255, 165, 2,1.0);
+                }
+
+                .Few {
+                    color: rgba(255, 71, 87,1.0);
+                }
+
             }
         }
 
@@ -120,6 +141,58 @@
         display: block;
         padding: 15px 0;
         letter-spacing: 1px;
+    }
+
+    .Success {
+        color: rgba(123, 237, 159,1.0);
+        display: block;
+        padding: 15px 0;
+        letter-spacing: 1px;
+
+        .fa-check {
+            padding-right: 5px;
+            font-size: 14px;
+        }
+    }
+}
+
+.product-enter-animation{
+    animation: open 1s;
+    .Photo {
+        animation: fromLeft 1s;
+    }
+
+    .About {
+        animation: fromRight 1s;
+    }
+}
+
+@keyframes open {
+    0%{
+        opacity: 0;
+        transform: scale(0.2)
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+@keyframes fromLeft {
+    0%{
+        transform: translateX(-100vh);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes fromRight {
+    0%{
+        transform: translateX(100vh);
+    }
+    100%{
+        transform: translateX(0);
     }
 }
 

@@ -5,7 +5,9 @@ import './index.scss';
 import App from './App';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducer from './store/reducer'; 
+import reducer from './store/reducer';
+import { AnimatedRoute, AnimatedSwitch } from 'react-router-transition';
+
 
 //for routes
 import home from './containers/Home/Home';
@@ -18,15 +20,20 @@ import faq from './components/FAQ/FAQ';
 const app = (
     <BrowserRouter>
         <App>
-        <Switch>
-            <Route exact path={'/'} component={home}/>
-            <Route exact path={'/faq'} component={faq}/>
-            <Route exact path={'/regulamin'} component={regulamin}/>
-            <Route exact path={'/kontakt'} component={kontakt}/>
-            <Route exact path={'/product/:id'} component={product}/>
-            <Route exact path={'/cart'} component={cart}/>
-            <Redirect to="/" />
-        </Switch>
+            <AnimatedSwitch
+                atEnter={{ opacity: 0 }}
+                atLeave={{ opacity: 1 }}
+                atActive={{ opacity: 1 }} 
+                className="animated-switch"
+            >
+                <Route exact path={'/'} component={home}/>
+                <Route exact path={'/faq'} component={faq}/>
+                <Route exact path={'/regulamin'} component={regulamin}/>
+                <Route exact path={'/kontakt'} component={kontakt}/>
+                <Route exact path={'/product/:id'}component={product}/>
+                <Route exact path={'/cart'} component={cart}/>
+                <Redirect to="/" />
+            </AnimatedSwitch>
         </App>
     </BrowserRouter>
 );

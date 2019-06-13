@@ -19,11 +19,12 @@
             letter-spacing: 1px;
             padding: 9px;
             outline: none;
-            width: 120px;
+            width: 140px;
             margin-bottom: 15px;
             border: none;
             background-color: rgba(241, 242, 246,1.0);
-            
+            text-transform: uppercase;
+
         }
 
         .Total {
@@ -31,6 +32,12 @@
             font-weight: 600;
             font-size: 18px;
             margin-bottom: 25px;
+
+            .BeforeDiscount {
+                color: rgba(206, 214, 224,1.0);
+                text-decoration: line-through;
+                padding-right: 15px;
+            }
         }
 
     }

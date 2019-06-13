@@ -3,7 +3,7 @@ import React from 'react';
 import './ButtonBlack.scss';
 
 const ButtonBlack = (props) => {
-    const button = (props.sizePicked !== null)? 
+    let button = (props.shouldBeDisabled !== true)? 
         <button 
         className="BtnBlack"
         onClick={props.clickedHandler}
