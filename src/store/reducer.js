@@ -2,284 +2,25 @@ import * as actionTypes from './actions';
 
 const initalState = {
       shoppingItems: [
-        {
-          id: 0,
-          name: 'T-shirt .ajej',
-          price: 99.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          size: {
-            S: 1,
-            M: 3,
-            L: 0,
-            XL: 20,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 1,
-          name: 'T-shirt .eye',
-          price: 79.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          size: {
-            S: 50,
-            M: 100,
-            L: 50,
-            XL: 20,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 2,
-          name: 'T-shirt .eye',
-          price: 79.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          size: {
-            S: 50,
-            M: 100,
-            L: 50,
-            XL: 20,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 3,
-          name: 'T-shirt .eye',
-          price: 50.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          size: {
-            S: 50,
-            M: 100,
-            L: 50,
-            XL: 20,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 4,
-          name: 'T-shirt .heyo',
-          price: 99.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          size: {
-            S: 50,
-            M: 100,
-            L: 50,
-            XL: 20,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 5,
-          name: 'T-shirt .aya',
-          price: 100.50,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          size: {
-            S: 50,
-            M: 100,
-            L: 50,
-            XL: 20,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 6,
-          name: 'T-shirt .eye',
-          price: 79.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          extra: 'PAGE2',
-          size: {
-            S: 1,
-            M: 3,
-            L: 0,
-            XL: 9,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 7,
-          name: 'T-shirt .wwww',
-          price: 79.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          extra: 'Ostatnia sztuka',
-          size: {
-            S: 1,
-            M: 0,
-            L: 0,
-            XL: 0,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 8,
-          name: 'T-shirt .ajej',
-          price: 99.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          size: {
-            S: 1,
-            M: 3,
-            L: 0,
-            XL: 20,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 9,
-          name: 'T-shirt .eye',
-          price: 79.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          size: {
-            S: 50,
-            M: 100,
-            L: 50,
-            XL: 20,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 10,
-          name: 'T-shirt .eye',
-          price: 79.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          size: {
-            S: 50,
-            M: 100,
-            L: 50,
-            XL: 20,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 11,
-          name: 'T-shirt .eye',
-          price: 50.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          size: {
-            S: 50,
-            M: 100,
-            L: 50,
-            XL: 20,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 12,
-          name: 'T-shirt .heyo',
-          price: 99.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          size: {
-            S: 50,
-            M: 100,
-            L: 50,
-            XL: 20,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 13,
-          name: 'T-shirt .aya',
-          price: 100.50,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          size: {
-            S: 50,
-            M: 100,
-            L: 50,
-            XL: 20,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 14,
-          name: 'T-shirt .eye',
-          price: 79.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          extra: 'Nowość',
-          size: {
-            S: 1,
-            M: 3,
-            L: 0,
-            XL: 9,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 15,
-          name: 'T-shirt .wwww',
-          price: 79.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          extra: 'Ostatnia sztuka',
-          size: {
-            S: 1,
-            M: 0,
-            L: 0,
-            XL: 0,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 16,
-          name: 'T-shirt .wwww',
-          price: 79.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          extra: 'Ostatnia sztuka',
-          size: {
-            S: 1,
-            M: 0,
-            L: 0,
-            XL: 0,
-          },
-          pickedSize: null,
-        },
-        {
-          id: 17,
-          name: 'T-shirt .wwww',
-          price: 79.00,
-          photoLink: "https://i.ibb.co/19TZNc3/t-shirt.png",
-          description: 'Vivamus vulputate nec nisl ut euismod. Proin accumsan bibendum aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a urna sem. Cras volutpat lectus tortor, ut viverra quam tempus in. Morbi vel sagittis massa. Vestibulum sodales libero non consequat condimentum. Donec semper lacus non velit aliquet volutpat. Sed pulvinar gravida turpis egestas mattis. Praesent et sapien neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris id volutpat leo. In tincidunt sit amet risus sed tempus. Nulla in elit et sem finibus facilisis nec et erat. Duis auctor blandit nibh, nec convallis odio venenatis eget.',
-          extra: 'Ostatnia sztuka',
-          size: {
-            S: 1,
-            M: 0,
-            L: 0,
-            XL: 0,
-          },
-          pickedSize: null,
-        },
+
+        
       ],
 
       cart: [
 
       ],
 
-      discountCodes: [ //value is in percentes ( % ) 
-        {name: 'wiosna', value: 20},
-        {name: 'bfeye', value: 50},
-        {name: 'start10', value: 10},
-        {name: 'czarneoko', value: 30},
-      ]
+      discountCodes: [ ],//value is in percentes ( % )
+
+      userLoggedIn: false,
+
+      userData: null,
 }
 
 const reducer = (state = initalState, action) => {
     switch (action.type) {
       case actionTypes.UNSORT:
-        console.log('unsort')
         const unsortedItemPositioning = action.shoppingItems.sort((a, b) => (a.id > b.id) ? 1 : -1)
-        console.log(unsortedItemPositioning)
         return { ...state, shoppingItems: unsortedItemPositioning}
         
       case actionTypes.SORT_AZ:
@@ -303,7 +44,6 @@ const reducer = (state = initalState, action) => {
 
       case actionTypes.DELETE_FROM_CART:
         const arrWithoutRemovedItem = state.cart.filter((item, index) => index !== action.itemIndex )
-        console.log(arrWithoutRemovedItem)
         return { ...state, cart: arrWithoutRemovedItem}
 
       case actionTypes.PICK_SIZE:
@@ -326,6 +66,23 @@ const reducer = (state = initalState, action) => {
 
       case actionTypes.CLEAR_CART:
         return { ...state, cart: []}
+
+      case actionTypes.FETCH_DISCOUNT_CODES:
+        return { ...state, discountCodes: action.discountCodes }
+      
+      case actionTypes.FETCH_SHOPPING_ITEMS:
+        return { ...state, shoppingItems: action.shoppingItems }
+
+      case actionTypes.FETCH_PRODUCT: 
+        let arrWithNewFetchedProduct = state.shoppingItems
+        arrWithNewFetchedProduct.find(item => item.id === Number(action.productId)).size = action.productFromDatabase.size
+        return { ...state, shoppingItems: arrWithNewFetchedProduct}
+
+        case actionTypes.FETCH_USER_DATA:
+          return { ...state, userData: action.userDataFromDatabes, userLoggedIn: true}
+        
+        case actionTypes.LOGOUT:
+            return { ...state, userData: null, userLoggedIn: false}
 
       default: return state; 
     };

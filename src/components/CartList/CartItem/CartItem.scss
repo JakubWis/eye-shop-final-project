@@ -18,39 +18,39 @@
         height: 200px;
         justify-content: space-between;
         align-items: center;
-    }
 
-    .Photo {
-        height: 200px;
-        background-color: rgba(241, 242, 246,0.8);
-    }
-
-    .Size {
-        color: rgba(164, 176, 190,1.0);
-        font-weight: 600;
-        word-spacing: 2px;
-    }
-
-    .About {
-        height: 150px;
-        width: 50%;
-        overflow: hidden;
-        color: rgba(47, 53, 66,1.0);
-
-        .Name {
-            font-weight: 400;
+        .Photo {
+            height: 200px;
+            background-color: rgba(241, 242, 246,0.8);
         }
 
-        .Description {
-            letter-spacing: 0.5px;
-            word-spacing: 1px;
-            height: 100px;
+        .Size {
+            color: rgba(164, 176, 190,1.0);
+            font-weight: 600;
+            word-spacing: 2px;
         }
-    }
 
-    .Price {
-        color: rgba(164, 176, 190,1.0);
-        font-weight: 600;
+        .About {
+            height: 150px;
+            width: 50%;
+            overflow: hidden;
+            color: rgba(47, 53, 66,1.0);
+
+            .Name {
+                font-weight: 400;
+            }
+
+            .Description {
+                letter-spacing: 0.5px;
+                word-spacing: 1px;
+                height: 100px;
+            }
+        }
+
+        .Price {
+            color: rgba(164, 176, 190,1.0);
+            font-weight: 600;
+        }
     }
 
     .SafeZone {
@@ -65,5 +65,139 @@
             outline: none;
         }
     }
+}
 
+@media (max-width: 900px){
+    .CartItem {
+    
+        .CartLink {
+            height: 200px;
+            width: 100%;
+            
+    
+            .Size {
+                margin-left: 5px;
+                width: 65px;
+            }
+    
+            .About {
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                .Name {
+                    font-size: 18px;
+                    padding-right: 10px;
+                }
+    
+                .Description {
+                    display: none;
+                }
+            }
+            .Price {
+                width: 71px;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px){
+    .CartItem {
+        display: flex;
+        height: 100px;
+        width: 100%;
+        margin: 14px 0;
+        justify-content: flex-start;
+        align-content: flex-start;
+        padding: 2px;
+        border: 1px solid rgba(206, 214, 224,1.0);
+        position: relative;
+    
+        .CartLink {
+            display: flex;
+            width: auto;
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: space-around;
+            position: relative;
+
+    
+            .Photo {
+                height: 99px;
+                background-color: rgba(241, 242, 246,0.8);
+                position: absolute;
+                left: 1px;
+                top: 1px;
+            }
+        
+            .Size {
+                width: auto;
+                margin-left: 110px;
+                color: rgba(164, 176, 190,1.0);
+                font-weight: 400;
+                word-spacing: 2px;
+                font-size: 14px;
+            }
+        
+            .About {
+                margin-left: 110px;
+                height: auto;
+                width: 100%;
+                overflow: visible;
+                text-align: center;
+
+        
+                .Name {
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+        
+                .Description {
+                    display: none;
+                }
+            }
+        
+            .Price {
+                width: auto;
+                margin-left: 110px;
+                color: rgba(164, 176, 190,1.0);
+                font-weight: 600;
+            }
+        }
+    
+        .SafeZone {
+            position: absolute;
+            right: 0;
+            width: auto;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            .Delete{
+                cursor: pointer;
+                color: rgba(255, 71, 87,1.0);
+                background: none;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px){
+    .CartItem {
+        .CartLink{
+            .About{
+                width: 110px;
+            }
+        }
+
+        .SafeZone {
+            position: absolute;
+            right: 0;
+            width: 57px;
+        }
+    }
 }

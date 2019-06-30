@@ -3,7 +3,7 @@
     flex-flow: column;
     padding-right: 100px; 
     border-bottom: 1px solid rgba(223, 228, 234,1.0);
-    height: 225px;
+    height: 250px;
 
     h2{
         padding-bottom: 15px;
@@ -11,7 +11,7 @@
         color: rgba(47, 53, 66,1.0);
     }
 
-    button {
+    .SortOption {
         background: none;
         border: none;
         font-size: 16px;
@@ -26,6 +26,116 @@
 
         &:hover{
             color: rgba(47, 53, 66,1.0);
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .SortList{
+        padding-right: 50px; 
+    }
+}
+
+@media (max-width: 850px) {
+    .SortList{
+        padding-right: 40px; 
+    }
+}
+
+@media (max-width: 600px) {
+
+
+    .SortListUnclicked{
+        width: 78px;
+        padding-right: 0;
+        position: absolute;
+        z-index: 10;
+
+        .BtnSort {
+            color: rgba(47, 53, 66,1.0);
+            padding: 7px 0px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255,1.0);
+            border-radius: 3px;
+            border: 1px solid rgba(164, 176, 190,1.0);
+            transition: all 1s;
+            outline: none;
+            width: 78px;
+            
+
+            .fas {
+                font-size: 14px;
+                position: relative;
+                left: 5px;
+                top: 1px;
+            }
+        }
+
+        .SortOption {
+            opacity: 0
+        }
+    }
+
+    .SortListClicked{
+        width: 120px;
+        height: 225px;
+        padding-right: 20px;
+        margin-right: 10px;
+        border-bottom: 1px solid rgba(223, 228, 234,1.0);
+
+        .BtnSort {
+            color: rgba(47, 53, 66,1.0);
+            padding: 7px 0px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255,1.0);
+            border-radius: 3px;
+            border: 1px solid rgba(164, 176, 190,1.0);
+            transition: all 1s;
+            outline: none;
+            width: 120px;
+            animation: 1s wdithenBtn;
+            
+
+            .fas {
+                font-size: 14px;
+                position: relative;
+                left: 5px;
+                top: 1px;
+            }
+        }
+
+        .SortOption {
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(116, 125, 140,1.0);
+            text-align: left;
+            cursor: pointer;
+            padding: 10px 0;
+            outline: none;
+            width: 120px;
+            animation: 1s showOptions;
+        }
+    }
+
+    @keyframes wdithenBtn {
+        0% {
+            width: 78px;
+        }
+        100% {
+            width: 120px;
+        }
+    }
+
+    @keyframes showOptions {
+        0% {
+            opacity: 0;
+            transform: translateX(-10vh);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
         }
     }
 }

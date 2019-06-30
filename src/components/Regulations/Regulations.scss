@@ -1,4 +1,4 @@
-.Regulamin {
+.Regulations {
     display: block;
     padding: 0px 25px;
     h1 {
@@ -11,5 +11,17 @@
     p {
         font-size: 18px;
         text-align: justify; 
+    }
+}
+
+@media (max-width: 600px){
+    .Regulations {
+        padding: 0px 10px;
+        p {
+            word-spacing: 1px;
+            letter-spacing: 0.5px;
+            font-size: 18px;
+            text-align: left; 
+        }
     }
 }

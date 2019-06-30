@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Magnifier from "react-magnifier";
 
 import ButtonBlack from '../../components/UI/ButtonBlack/ButtonBlack';
-import { addToCart, pickSize, removeFromStore } from '../../store/actions';
-
+import { addToCart, pickSize, removeFromStore, fetchProduct } from '../../store/actions';
 import './Product.scss';
+import axios from '../../axiosShoppingItems';
+
 
 class Product extends Component {
 
@@ -22,12 +24,21 @@ class Product extends Component {
       ],
       youShouldPickSizeWaring: null,
       howMany: {color: '', word: 'sprawdź'},
+      carouselValue: 0,
+      photoYouAreLookingAt: null,
     }
   }
 
   componentDidMount() {
-    console.log(this.props)
-    
+    window.scrollTo(0, 0)
+    this.setState({photoYouAreLookingAt: this.state.item.photoLink})
+
+    axios.get(`/shoppingItems/${this.props.match.params.id}.json`)
+      .then(res => {
+        this.props.fetchProduct(res.data, this.props.match.params.id)
+        this.setState({item: this.props.shoppingItems.filter(item => item.id === Number(this.props.match.params.id))[0]})
+      })
+      .catch(err => console.log(err))
   }
 
   convertToCash = (number) => {
@@ -46,7 +57,7 @@ class Product extends Component {
     })
     this.setState({amount: 1})
 
-    const waring = <span className="Success"><span class="fas fa-check"></span>Dodano produkt do koszyka.</span>
+    const waring = <span className="Success"><span className="fas fa-check"></span>Dodano produkt do koszyka.</span>
     this.setState({youShouldPickSizeWaring: waring})
     this.setState({howMany:{ color: '', word: 'sprawdź'}})
   }
@@ -130,6 +141,10 @@ class Product extends Component {
     return <span className={howMany.color}>{howMany.word}</span>
   }
 
+  onThumbNailClick = (e) => {
+    this.setState({photoYouAreLookingAt: e.target.src})
+  }
+
   render() {
     
     let sizeButtons = this.state.sizeBtns.map(btn => {
@@ -158,12 +173,42 @@ class Product extends Component {
       }
     })
 
+    let price
+    if(this.state.item.discount){
+      price = (
+        <h4 className="Price">
+          {this.convertToCash(this.state.item.price - ((this.state.item.discount/100) * this.state.item.price))}
+          <span className="BeforeDiscount">({this.convertToCash(this.state.item.price)})</span>
+        </h4>
+      )
+    }else {
+      price = (
+        <h4 className="Price">{this.convertToCash(this.state.item.price)}</h4>
+      )
+    }
+
     return(
       <div className="Product product-enter-animation">
-        <img src={this.state.item.photoLink} className="Photo" alt="product"/>
+        <div className="PhotoCarousel">
+            <div className="ThumbNailList">
+              <img onClick={(e) => this.onThumbNailClick(e)} src={this.state.item.photoLink} className="ThumbNail"alt="productThumbNail"/>
+              <img onClick={(e) => this.onThumbNailClick(e)} src={this.state.item.photoLink2} className="ThumbNail"alt="productThumbNail"/>
+              <img onClick={(e) => this.onThumbNailClick(e)} src={this.state.item.photoLink3} className="ThumbNail"alt="productThumbNail"/>
+            </div>
+            <div className="MainPhoto" >
+             <Magnifier 
+                src={this.state.photoYouAreLookingAt}
+                alt="product"
+                zoomFactor={1.4}
+                mgWidth={150}
+                mgHeight={150}
+                mgShape="square"
+              />
+            </div>
+        </div>
         <div className="About">
           <h1 className="Name">{this.state.item.name}</h1>
-          <h4 className="Price">{this.convertToCash(this.state.item.price)}</h4>
+          {price}
           <p className="Description">
             { this.state.item.description }
           </p>
@@ -207,6 +252,7 @@ const mapDispatchToPros = {
   addToCart: addToCart,
   pickSize: pickSize,
   removeFromStore: removeFromStore,
+  fetchProduct: fetchProduct,
 }
 
 export default connect(mapStateToProps, mapDispatchToPros)(Product);

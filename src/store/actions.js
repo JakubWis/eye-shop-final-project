@@ -15,6 +15,14 @@ export const ADD_TO_STORE = 'ADD_TO_STORE'
 
 export const PICK_SIZE = 'PICK_SIZE'
 
+export const FETCH_DISCOUNT_CODES = 'FETCH_DISCOUNT_CODES'
+export const FETCH_SHOPPING_ITEMS = 'FETCH_SHOPPING_ITEMS'
+export const FETCH_PRODUCT = 'FETCH_PRODUCT'
+
+export const AUTH_SUCCESS = 'AUTH_SUCCESS'
+export const FETCH_USER_DATA = 'FETCH_USER_DATA' 
+export const LOGOUT = 'LOGUT'
+
 //creators
 export const unsort = (shoppingItems) => {
     return {
@@ -88,7 +96,7 @@ export const addToStore = (  productId, pickedSize ) => {
         pickedSize
     }
 }
-//CHANGE WHEN DATABASE!!!!!!
+
 export const buyProducts = ( cart, shoppingItems ) => {
     return {
         type: BUY_PRODUCTS,
@@ -104,3 +112,47 @@ export const clearCart = ( cart ) => {
     }
 }
 
+export const fetchDiscountCodes = (discountCodes) => {
+    return {
+        type: FETCH_DISCOUNT_CODES,
+        discountCodes,
+    }
+}
+
+export const fetchShoppingItems = (shoppingItems) => {
+    return {
+        type: FETCH_SHOPPING_ITEMS,
+        shoppingItems,
+    }
+}
+
+export const fetchProduct = (productFromDatabase, productId) => {
+    return {
+        type: FETCH_PRODUCT,
+        productFromDatabase,
+        productId,
+    }
+}
+
+export const authSucces = (userId, userToken) => {
+    localStorage.setItem('loggedUserId', userId)
+    localStorage.setItem('userToken', userToken)
+    return {
+        type: AUTH_SUCCESS,
+    }
+}
+
+export const fetchUserData = (userDataFromDatabes) => {
+    return {
+        type: FETCH_USER_DATA,
+        userDataFromDatabes,
+    }
+}
+
+export const logout = () => {
+    localStorage.removeItem('loggedUserId')
+    localStorage.removeItem('expiresAt')
+    return {
+        type: LOGOUT,
+    }
+}

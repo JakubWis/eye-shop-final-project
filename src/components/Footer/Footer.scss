@@ -8,7 +8,7 @@
 
     h6 {
         position: absolute;
-        left: 0;
+        left: 0px;
         font-size: 16px;
         font-weight: 500;
         letter-spacing: 1px;
@@ -36,4 +36,36 @@
     .fa-instagram{
         font-size: 20px;
     }
+}
+
+@media (max-width: 850px) {
+    .Footer {
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .Footer {
+        height: auto;
+        padding: 20px;
+        margin-top: 40px;
+        display: flex;
+        flex-flow: column;
+        align-items: flex-end;
+        justify-content: center;
+        position: relative;
+        border-top: 1px solid rgba(223, 228, 234,1.0);
+
+        h6 {
+            top: 22px;
+            left: 20px;
+        }
+
+        a{
+            margin-left: 0;
+            margin-top: 2px;
+        }
+    }
+
+    
 }

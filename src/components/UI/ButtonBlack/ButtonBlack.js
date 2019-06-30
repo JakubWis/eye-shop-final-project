@@ -5,6 +5,7 @@ import './ButtonBlack.scss';
 const ButtonBlack = (props) => {
     let button = (props.shouldBeDisabled !== true)? 
         <button 
+        type="submit"
         className="BtnBlack"
         onClick={props.clickedHandler}
          >

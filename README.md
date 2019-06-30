@@ -1,5 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Data for  PayPal payment (sandbox)
+
+Email: `janusz@tester.com`
+Password: `test1234`
+
+### VISA Credit Card (sandbox)
+
+Credit Card Number: `4443579784623910`
+Expiration Date: `07/2024`
+
+Other inputs can be filled with any data.
+
 ## Available Scripts
 
 In the project directory, you can run:

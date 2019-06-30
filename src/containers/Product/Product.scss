@@ -1,14 +1,39 @@
 .Product {
     display: flex;
     transition: transform 0.5s, opacity 0.5s;
+    padding-bottom: 80px;
 
-    .Photo {
-        background-color: rgba(241, 242, 246,0.8);
+    .PhotoCarousel {
         width: 50%;
+        display: flex;
+
+        .MainPhoto {
+            margin-left: 4%;
+            width: 79%;
+            img{
+                padding: 1%;
+                background-color: rgba(241, 242, 246,0.8);
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .ThumbNailList{
+            width: 14%;
+            height: auto;
+            img{
+                padding: 2%;
+                border: 1px solid  rgba(164, 176, 190,1.0);
+                margin-top: 4px;
+                width: 100%;
+                cursor: pointer;
+            }
+        }
     }
 
     .About {
-        padding-left: 50px;
+        padding-left: 25px;
+        width: 50%;
 
         .Name {
             font-weight: 400;
@@ -21,6 +46,12 @@
             font-size: 18px;
             letter-spacing: 2px;
             color: rgba(164, 176, 190,1.0);
+
+            .BeforeDiscount {
+                font-size: 16px;
+                text-decoration: line-through;
+                padding-left: 10px;
+            }
         }
     
         .Description {
@@ -196,20 +227,32 @@
     }
 }
 
-@media (max-height: 850px) {
+@media (max-width: 1500px) {
     .Product {
-    
-        .Photo {
-            height: 65vh;
-        }
+        padding-bottom: 25px;
     }
 }
 
-@media (max-height: 650px) {
+
+
+@media (max-width: 1000px) {
     .Product {
+        display: flex;
+        flex-direction: column;
+        position: relative;
     
-        .Photo {
-            height: 85vh;
+        .PhotoCarousel {
+            height: auto;
+            width: 80%;
+            margin: 0 auto 10px auto;
+        }
+    
+        .About {
+            width: auto;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     }
 }

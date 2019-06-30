@@ -111,3 +111,27 @@
         transform: translateX(0);
     }
 }
+
+@media (max-width: 850px) {
+    .ShoppingList {
+    
+        .SearchBlock {
+            padding-left: 14.3%;
+            padding-right: 4%;
+    
+            .SearchInput {
+                width: 50%;
+    
+                &:focus {
+                    width: 70%;
+                    border-color: rgba(47, 53, 66,1.0);
+                }
+            }
+
+            .fas {
+                right: 22px;
+            }
+        }
+        
+    }
+}

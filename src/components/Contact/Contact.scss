@@ -32,3 +32,26 @@
         padding-bottom: 0vh;
     }
 }
+
+@media (max-width: 400px) {
+    .Contact {
+
+        .Info {
+            font-size: 30px;
+            margin: 20px 0;
+            color: rgba(47, 53, 66,1.0);
+            .fas, .far {
+                font-size: 45px;
+                margin-right: 10px;
+                color: rgba(206, 214, 224,1.0);
+                position: relative;
+                top: 6px;
+            }
+        }
+
+        .Hours {
+            display: block;
+            font-size: 18px;
+        }
+    }
+}

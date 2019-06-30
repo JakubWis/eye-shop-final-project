@@ -13,13 +13,13 @@ for( let i = 0; i < 3; i++) {
     </p>)
 }
 
-const Regulamin = props => {
+const Regulations = props => {
     return(
-      <div className="Regulamin">
+      <div className="Regulations">
         <h1>Regulamin</h1>
         {dumyContent}
       </div>
     );
   }
 
-export default Regulamin;
+export default Regulations;

@@ -112,7 +112,7 @@ class ShoppingList extends Component {
                         this.setState({currentPage: 0})
                     }}
                 />
-                <span class="fas fa-search"></span>
+                <span className="fas fa-search"></span>
             </div>
             {this.shoppingItemsOnDisplay(this.state.currentPage, shoppingItems)}
             <div className="Controls">

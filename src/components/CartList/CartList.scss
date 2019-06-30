@@ -41,6 +41,22 @@
         }
 
     }
-
-    
 }
+
+@media (max-width: 600px) {
+    .CartList {
+        .Summary {
+            padding-top: 40px;
+
+            .Discount {
+                font-size: 14px;
+                width: 130px;
+            }
+    
+            .Total {
+                font-size: 16px;
+            }
+        }
+    }
+}
+

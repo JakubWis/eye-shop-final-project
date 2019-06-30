@@ -1,0 +1,64 @@
+.CustomerInfo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 130px;
+
+    h1 {
+        width: 100%;
+        text-align: center;
+        font-size: 45px;
+        color: rgba(47, 53, 66,1.0);
+        font-weight: 300;
+        padding-bottom: 25px;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        align-items: center;
+        input {
+            color: rgba(47, 53, 66,1.0);
+            padding: 7px 30px 7px 7px;
+            width: 100%;
+            height: 26px;
+            font-size: 18px;
+            background-color: rgba(255, 255, 255,1.0);
+            border-radius: 3px;
+            border: 1px solid rgba(164, 176, 190,1.0);
+            transition: all 1.5s;
+            outline: none;
+            margin: 12px 0;
+        
+            &:focus {
+                border-color: rgba(47, 53, 66,1.0);
+            }
+        }
+
+        .Total {
+            letter-spacing: 1px;
+            display: flex;
+            align-items: flex-end;
+            color: rgba(47, 53, 66,1.0);
+            padding: 10px 0 20px 0;
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    .CustomerInfo{ 
+        padding-bottom: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .CustomerInfo{ 
+        form {
+            width: 250px;
+            input {
+                font-size: 16px;
+            }
+        }
+    }
+}

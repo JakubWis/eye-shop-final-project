@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import SortList from '../../components/SortList/SortList';
 import ShoppingList from '../../components/ShoppingList/ShoppingList';
 import { sortAz, sortZa, unsort, sortPriceAscending, sortPriceDescending } from '../../store/actions';
-
 import './Home.scss';
 
 class Home extends Component {
@@ -17,14 +16,14 @@ class Home extends Component {
         {id: 1, type: 'Nazwa Z-A', clicked: false},
         {id: 2, type: 'Ceny rosnąco', clicked: false},
         {id: 3, type: 'Ceny malejąco', clicked: false},
+        {id: 4, type: 'Promocje', clicked: false},
       ],
       searchedValue: '',
     }
   }
 
   componentWillMount() {
-    if(this.CheckIfItemsAreSorted() === false)
-      this.props.unsort(this.props.shoppingItems)
+    this.props.unsort(this.props.shoppingItems)
   }
 
   onClickSortHandler = (key) => {
@@ -42,6 +41,7 @@ class Home extends Component {
     }
     if( key === 3  && listItems[key].clicked === false) {
       this.props.sortPriceDescending(this.props.shoppingItems)
+      
     }
 
     //dealing with highlighting
@@ -51,7 +51,7 @@ class Home extends Component {
       listItems[key].clicked = false
     }
     else {
-      for(let i = 0; i < 4 ; i++) {
+      for(let i = 0; i < 5 ; i++) {
         listItems[i].clicked = false;
        if(i === key) listItems[i].clicked = true;
       }
@@ -73,15 +73,23 @@ class Home extends Component {
     this.setState({searchedValue: text})
   }
 
-  shoppingItemsAfterSearch = (shoppingItems, serchFraze) => {
-    if(serchFraze === '')
-      return shoppingItems
+  shoppingItemsAfterSearch = (shoppingItems, serchFraze, showDiscounts) => {
+    let shoppingItemsAfterSearch = []
+    if(serchFraze === ''){
+      if(showDiscounts) {
+        shoppingItems.forEach(item => {
+          if(item.discount)
+            return shoppingItemsAfterSearch.push(item)
+        })
+        return shoppingItemsAfterSearch
+      }
+      else return shoppingItems
+    }     
     else {
-      let shoppingItemsAfterSearch = []
       shoppingItems.map(item => {
         for(let i=0; i< item.name.length - serchFraze.length + 1; i++){
           if(serchFraze === item.name.substr(i, serchFraze.length))
-            return shoppingItemsAfterSearch.push(item)
+             return shoppingItemsAfterSearch.push(item)
         }
       })
       return shoppingItemsAfterSearch
@@ -91,17 +99,17 @@ class Home extends Component {
   render() {
     return(
       <div className="Home">
-        <SortList 
-          sortListItems={this.state.sortListItems}
-          onClickChangeColor={this.onClickSortHandler}
-        />
-        <ShoppingList 
-          shoppingItems={this.shoppingItemsAfterSearch(this.props.shoppingItems, this.state.searchedValue)}
-          convertToCash={this.convertToCash}
-          isSorted={this.CheckIfItemsAreSorted()}
-          searcheFor={this.getSearchedValue}
-          searchedValue={this.state.searchedValue}
-        />
+          <SortList 
+            sortListItems={this.state.sortListItems}
+            onClickChangeColor={this.onClickSortHandler}
+          />
+          <ShoppingList 
+            shoppingItems={this.shoppingItemsAfterSearch(this.props.shoppingItems, this.state.searchedValue, this.state.sortListItems[4].clicked)}
+            convertToCash={this.convertToCash}
+            isSorted={this.CheckIfItemsAreSorted()}
+            searcheFor={this.getSearchedValue}
+            searchedValue={this.state.searchedValue}
+          />
       </div>
     );
   }

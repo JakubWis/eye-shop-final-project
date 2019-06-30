@@ -30,3 +30,17 @@
     font-weight: 300;
     outline: none;
 }
+
+@media (max-width: 600px) {
+    .BtnBlack {
+        width: 190px;
+        padding: 8px 0px;
+
+    }
+    
+    .BtnBlackDisabled {
+        width: 190px;
+        padding: 8px 0px;
+ 
+    }
+}

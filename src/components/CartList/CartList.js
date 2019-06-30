@@ -32,7 +32,7 @@ const CartList = (props) => {
                 RAZEM: {props.total} 
             </span>
             <ButtonBlack 
-                text="Zapłać"
+                text="Kupuję"
                 clickedHandler={props.buyProductsHandler}
                 shouldBeDisabled={(props.cartItems.length === 0)? true: false}/>
             </div>
