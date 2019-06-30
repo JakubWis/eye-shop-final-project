@@ -25,8 +25,8 @@ class Nav extends Component {
       if(this.props.userLoggedIn) {
         menuJSX = 
         <div className="Menu">
-          <NavLink  to="/" activeClassName="active">Home</NavLink>
-          <NavLink  to="/kontakt" activeClassName="active">Kontakt</NavLink>
+          <NavLink exact to="/" activeClassName="active">Home</NavLink>
+          <NavLink to="/kontakt" activeClassName="active">Kontakt</NavLink>
           <NavLink to="/regulamin" activeClassName="active">Regulamin</NavLink>
           <NavLink to="/faq" activeClassName="active">Faq</NavLink>
           <Link to="/" className="LoginBtn" onClick={this.logoutHandler}>Wyloguj się</Link>
@@ -35,7 +35,7 @@ class Nav extends Component {
       } else {
         menuJSX = 
         <div className="Menu">
-          <NavLink to="/" activeClassName="active">Home</NavLink>
+          <NavLink exact to="/" activeClassName="active">Home</NavLink>
           <NavLink to="/kontakt" activeClassName="active">Kontakt</NavLink>
           <NavLink to="/regulamin" activeClassName="active">Regulamin</NavLink>
           <NavLink to="/faq" activeClassName="active">Faq</NavLink>
@@ -113,7 +113,7 @@ class Nav extends Component {
               <Link to="/" className="LoginBtn" onClick={this.logoutHandler}>Wyloguj się</Link>
             </div>
             <div className="Menu">
-              <NavLink to="/" activeClassName="active">Home</NavLink>
+              <NavLink exact to="/" activeClassName="active">Home</NavLink>
               <NavLink to="/kontakt" activeClassName="active">Kontakt</NavLink>
               <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/"><span className="fab fa-instagram"></span>insta</a>
               <NavLink to="/cart" activeClassName="active-cart" className="Cart">
@@ -133,7 +133,7 @@ class Nav extends Component {
               <Link to="/register" className="LoginBtn">Zarejestruj się</Link>
             </div>
             <div className="Menu">
-              <NavLink to="/" activeClassName="active">Home</NavLink>
+              <NavLink exact to="/" activeClassName="active">Home</NavLink>
               <NavLink to="/kontakt" activeClassName="active">Kontakt</NavLink>
               <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/"><span className="fab fa-instagram"></span>insta</a>
               <NavLink to="/cart" activeClassName="active-cart" className="Cart">

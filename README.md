@@ -1,4 +1,17 @@
+Website link: https://eye-shop-1d673.firebaseapp.com/
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Discount codes to use
+
+`bfeye` -50%
+
+`start10` -10%
+
+`wiosna` -20%
+
+`czarneoko` -30%
 
 ## Data for  PayPal payment (sandbox)
 
