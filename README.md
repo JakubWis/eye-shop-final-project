@@ -3,11 +3,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Data for  PayPal payment (sandbox)
 
 Email: `janusz@tester.com`
+
 Password: `test1234`
 
-### VISA Credit Card (sandbox)
+## VISA Credit Card (sandbox)
 
 Credit Card Number: `4443579784623910`
+
 Expiration Date: `07/2024`
 
 Other inputs can be filled with any data.
